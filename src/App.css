@@ -26,3 +26,14 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+/* Explicitly set map height to define div element containing the map */
+#map {
+  height: 100vh;
+}
+/* Optional: Makes the page fill the window. */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
