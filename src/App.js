@@ -82,6 +82,15 @@ class App extends Component {
   render() {
     return (
       <main>
+        <div id="title">
+          <h1>Welcome to the Neighborhood Map</h1>
+          <h2>This map shows Coffee shops in Eau Claire, WI</h2>
+          <button>Show List</button>
+          <button>Hide List</button>
+        </div>
+        <div id="list">
+          <h3>List of Coffee Shops</h3>
+        </div>
         <div id="map" />
       </main>
     );
