@@ -4,14 +4,12 @@ import axios from 'axios';
 import './App.css';
 
 class App extends Component {
-
   state = {
     venues: []
-  }
+  };
 
   componentDidMount() {
     this.getVenues();
-    this.renderMap();
   }
 
   renderMap = () => {
@@ -36,7 +34,7 @@ class App extends Component {
       .then(response => {
         this.setState({
           venues: response.data.response.groups[0].items
-        })
+        }, this.renderMap());
       })
       .catch(error => {
         console.log('ERROR! ' + error);
@@ -47,6 +45,17 @@ class App extends Component {
     var map = new window.google.maps.Map(document.getElementById('map'), {
       center: { lat: 44.810516, lng: -91.493506 },
       zoom: 10
+    });
+
+    this.state.venues.map(myVenue => {
+      var marker = new window.google.maps.Marker({
+        position: {
+          lat: myVenue.venue.location.lat,
+          lng: myVenue.venue.location.lng
+        },
+        map: map,
+        title: myVenue.venue.name
+      });
     });
   };
 
