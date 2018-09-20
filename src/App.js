@@ -32,9 +32,12 @@ class App extends Component {
     axios
       .get(endPoint + new URLSearchParams(params))
       .then(response => {
-        this.setState({
-          venues: response.data.response.groups[0].items
-        }, this.renderMap());
+        this.setState(
+          {
+            venues: response.data.response.groups[0].items
+          },
+          this.renderMap()
+        );
       })
       .catch(error => {
         console.log('ERROR! ' + error);
@@ -42,12 +45,20 @@ class App extends Component {
   };
 
   initMap = () => {
+    // create a map
     var map = new window.google.maps.Map(document.getElementById('map'), {
       center: { lat: 44.810516, lng: -91.493506 },
-      zoom: 10
+      zoom: 12
     });
 
+    // create an infowindow
+    var infowindow = new window.google.maps.InfoWindow();
+
+    // display dynamic markers
     this.state.venues.map(myVenue => {
+      var contentString = `${myVenue.venue.name}`;
+
+      // create a marker
       var marker = new window.google.maps.Marker({
         position: {
           lat: myVenue.venue.location.lat,
@@ -55,6 +66,15 @@ class App extends Component {
         },
         map: map,
         title: myVenue.venue.name
+      });
+
+      // click a marker
+      marker.addListener('click', function() {
+        // change the content
+        infowindow.setContent(contentString);
+
+        // open infowindow
+        infowindow.open(map, marker);
       });
     });
   };
