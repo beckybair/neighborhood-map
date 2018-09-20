@@ -45,3 +45,9 @@ html, body {
   margin: 0;
   padding: 0;
 }
+h1 {
+  font-family: 'Cinzel', serif;
+}
+h2 {
+  font-family: 'Bellefair', serif;  
+}
