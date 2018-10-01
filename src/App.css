@@ -1,4 +1,6 @@
-.App {
+/* App CSS file */
+
+/* .App {
   text-align: center;
 }
 
@@ -25,6 +27,10 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+} */
+
+main {
+  display: block;
 }
 
 /* Explicitly set map height to define div element containing the map */
@@ -32,7 +38,7 @@
   height: 100vh;
 }
 #list {
-  padding: 30px;
+  height: 100vh;
   background-color: thistle;
 }
 #title {
@@ -50,4 +56,10 @@ h1 {
 }
 h2 {
   font-family: 'Bellefair', serif;  
+}
+button {
+  margin: 0 5px;
+}
+.pointer {
+  cursor: pointer;
 }
