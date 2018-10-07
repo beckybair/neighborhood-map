@@ -14,7 +14,8 @@ We were to create an app that uses a Map API (like Google Maps) and another Venu
 ## Instructions
 _Run this on your device_
 
-Here is a link to a live version of the site:  xx
+Here is a link to a live version of the site:  https://beckybair.github.io/neighborhood-map/
+
 ** NOTE: due to limits with the API calls, the map may be greyed out and the infoboxes may not show when map markers are clicked.
 
 You can either clone or download the zip file.  Once on your computer, navigate to the location/folder you saved it.  Open your terminal at this location (either the command line or git bash on windows, or terminal on mac).
